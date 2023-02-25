@@ -4,9 +4,9 @@ const logoWidth = 216;
 const logoHeight = 100;
 
 let xPosition = Math.floor(Math.random() * (innerWidth - logoWidth));
-let xVelocity = 2;
+let xVelocity = Math.random() < 0.5 ? 2 : -2;
 let yPosition = Math.floor(Math.random() * (innerHeight - logoHeight));
-let yVelocity = 2;
+let yVelocity = Math.random() < 0.5 ? 2 : -2;
 
 setInterval(() => {
     checkCollision();
