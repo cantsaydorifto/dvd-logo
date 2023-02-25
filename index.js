@@ -1,9 +1,12 @@
 const logo = document.querySelector('.logo');
 
-let xPosition = Math.floor(Math.random() * (innerWidth - 108));
-let xVelocity = 1;
-let yPosition = Math.floor(Math.random() * (innerHeight - 50));
-let yVelocity = 1;
+const logoWidth = 216;
+const logoHeight = 100;
+
+let xPosition = Math.floor(Math.random() * (innerWidth - logoWidth));
+let xVelocity = 2;
+let yPosition = Math.floor(Math.random() * (innerHeight - logoHeight));
+let yVelocity = 2;
 
 setInterval(() => {
     checkCollision();
@@ -19,11 +22,11 @@ function moveLogo() {
 }
 
 function checkCollision() {
-    if (xPosition > innerWidth - 109 || xPosition < 0) {
+    if (xPosition + (logoWidth + xVelocity) > innerWidth || xPosition < 0) {
         xVelocity *= -1;
         changeColor();
     }
-    if (yPosition > innerHeight - 51 || yPosition < 0) {
+    if (yPosition + (logoHeight + yVelocity) > innerHeight || yPosition < 0) {
         yVelocity *= -1;
         changeColor();
     }
